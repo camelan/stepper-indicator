@@ -18,11 +18,11 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
-import android.support.annotation.UiThread;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
+import androidx.annotation.Nullable;
+import androidx.annotation.UiThread;
+import androidx.core.content.ContextCompat;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
@@ -427,12 +427,7 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
             TypedArray t = context.obtainStyledAttributes(new int[]{android.R.attr.colorPrimary});
             color = t.getColor(0, ContextCompat.getColor(context, R.color.stpi_default_primary_color));
             t.recycle();
-        } else {
-            TypedArray t = context.obtainStyledAttributes(new int[]{R.attr.colorPrimary});
-            color = t.getColor(0, ContextCompat.getColor(context, R.color.stpi_default_primary_color));
-            t.recycle();
         }
-
         return color;
     }
 
